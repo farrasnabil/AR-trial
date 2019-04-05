@@ -96,20 +96,21 @@
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
+        <a-scene>
+            <a-assets>
+              <a-asset-item id="tree" src="tree.gltf">
+            </a-assets>
+          
+            <!-- Using the asset management system. -->
+            <a-gltf-model src="#tree"></a-gltf-model>
+          
+            <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
+            <a-gltf-model src="tree.gltf"></a-gltf-model>
+          </a-scene>
         <a-text value="schneider"></a-text>
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
-	<a-scene>
-  <a-assets>
-    <a-asset-item id="tree" src="tree.gltf">
-  </a-assets>
-
-  <!-- Using the asset management system. -->
-  <a-gltf-model src="#tree"></a-gltf-model>
-
-  <!-- Defining the URL inline. Not recommended but more comfortable for web developers. -->
-  <a-gltf-model src="tree.gltf"></a-gltf-model>
-</a-scene>
+        <!--<a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>-->
 
         <!-- 3D Model example -->
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-obj-model.html -->
