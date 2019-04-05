@@ -2,7 +2,19 @@
 <html>
 	<head>
 
-    
+    <!--
+    AR.js workshop
+    Author: Matt Nutsch
+    Date: 6-20-2018
+    Description: This is sample code for a workshop on developing an AR.js app.
+    Notes:
+    This code is based in part on Jerome Etienne's examples of AR.js at: https://github.com/jeromeetienne/AR.js/tree/master/aframe
+    It is also based in part on the AFrame documentation, available at: https://aframe.io/docs
+
+    Go to this URL to run this code in a mobile web browser: https://mnutsch.github.io/arjs_workshop/start/index.html
+    Download and print this image for the AR target marker: https://github.com/mnutsch/mnutsch.github.io/raw/master/arjs_workshop/start/Hiro%20pattern%20with%20border.pdf
+    -->
+
     <!-- include a-frame -->
     <script src="https://mnutsch.github.io/arjs_workshop/start/vendor/aframe/build/aframe.min.js"></script>
 
@@ -57,27 +69,58 @@
         <!--<a-asset-item id="3DModel-mtl" src="3DModel.mtl"></a-asset-item>-->
       
       </a-assets>
-	    
+
+      <!-- Create a anchor to attach your augmented reality -->
       <a-anchor hit-testing-enabled='true'>
-	      
-       <a-scene>
-          <a-assets>
-          <a-asset-item id="monster"e src="/path/to/monster.gltf"></a-asset-item>
-           </a-assets>
-            <!-- use your gltf model -->
-          <a-entity gltf-model="##monster">
-          </a-entity>
-       </a-scene>
+
+        <!-- Add your augmented reality items here -->
+
+        <!-- example of basic text in 3D -->
+        <!-- see: https://github.com/aframevr/aframe/blob/master/docs/components/text.md -->
+        <!--<a-entity id="basicText" position='0 0 0' scale='1 1 1' color='red' text='value: Hello World;'></a-entity>-->
+
+        <!-- example of a basic plane. -->
+        <!-- see: https://aframe.io/docs/0.8.0 -->
+        <!--<a-plane color="blue" height="1" width="1" rotation="-90 0 0"></a-plane>-->
+
+        <!-- example of text fit onto a plane -->
+        <!--
+        <a-plane
+        id = "helloWorldPlane"
+        geometry="primitive: plane; width: 1; height: 1; height: auto"
+        material="opacity: 0.5; color: white;"
+        position='0 0.25 3'>
+          <a-entity id="planeText" scale='2 2 2' text="value: Hello World;" align-"center"></a-entity>
+        </a-plane>
+        -->
+
+        <!-- Basic Box -->             
+        <!-- see: https://aframe.io/docs/0.8.0 -->
+        <a-assets>
+            <a-asset-item id="tree" src="/path/to/tree.gltf"></a-asset-item>
+          </a-assets>
+          <!-- use your gltf model -->
+          <a-entity gltf-model="##tree"></a-entity>
+        <!-- Basic Sphere --> 
+        <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
+        <!--<a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>-->
+
+        <!-- 3D Model example -->
+        <!-- see: https://aframe.io/docs/0.8.0/primitives/a-obj-model.html -->
+        <!--<a-obj-model id="my3DModel" src="#3DModel-obj" position="0 0 0" rotation="0 0 0" scale=".1 .1 .1" material="opacity: 0.9; side:double; color: orange;"></a-obj-model>-->
+        <!-- 3D Model example with skin -->
+        <!--<a-obj-model id="my3DModel" src="#3DModel-obj" mtl="#3DModel-mtl" position="0 0 0" rotation="0 0 0" scale="1 1 1" material="opacity: 1.0; side:double;"></a-obj-model>-->
         
       </a-anchor>
 
+      <!-- Define a static camera -->
       <a-camera-static/>
 
     </a-scene>
 
     <!-- add some info at the bottom left of the page -->
     <div >
-      <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px;'>scneider.</span>
+      <span id="myText" style='z-index: 1; color: white; position: fixed; left: 50px; bottom: 10px;'>Add some text here.</span>
     </div>   
 
   </body>
