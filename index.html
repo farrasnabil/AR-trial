@@ -96,12 +96,15 @@
 
         <!-- Basic Box -->             
         <!-- see: https://aframe.io/docs/0.8.0 -->
-        <a-assets>
-  <a-asset-item id="tree" src="/path/to/tree.gltf"></a-asset-item>
-</a-assets>
-<!-- use your gltf model -->
-<a-entity gltf-model="##tree"></a-entity>
-        <a-text value="schneider"></a-text>
+       <a-scene>
+          <a-assets>
+          <a-asset-item id="monster"e src="/path/to/monster.gltf"></a-asset-item>
+           </a-assets>
+            <!-- use your gltf model -->
+          <a-entity gltf-model="##monster">
+          </a-entity>
+       </a-scene>
+      
         <!-- Basic Sphere --> 
         <!-- see: https://aframe.io/docs/0.8.0/primitives/a-sphere.html -->
         <!--<a-sphere id="mySphere" position='0 0 0' color="yellow" radius="0.05"></a-sphere>-->
